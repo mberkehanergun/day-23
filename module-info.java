@@ -19,12 +19,13 @@ module EngineersApp {
 	requires org.apache.derby.engine;
 	requires org.apache.derby.tools;
 	requires org.apache.commons.pool2;
-	requires java.sql;
 	requires javax.annotation;
+	requires java.sql;
 	exports mainpackage;
 	exports mainpackage.company;
 	exports mainpackage.customer;
 	exports mainpackage.dao;
 	
 	opens application to javafx.graphics, javafx.fxml;
+	opens mainpackage.company to spring.core;
 }
