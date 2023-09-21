@@ -25,7 +25,12 @@ import javax.sql.DataSource;
 @Component
 public class NamedParamJdbcDaoImpl extends NamedParameterJdbcDaoSupport {
 	
-	DataSource dataSource = getDataSource();
+	private DataSource dataSource;
+
+    	@Autowired
+    	public NamedParamJdbcDaoImpl(DataSource dataSource) {
+        	this.dataSource = dataSource;
+    	}
 	
 	public List<String> displayPermanentCustomer() {
 		List<String> messages = new ArrayList<>();
